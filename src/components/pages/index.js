@@ -248,6 +248,7 @@ export default class Pages extends PureComponent {
       <View style={[styles.container, containerStyle]}>
         <ScrollView
           {...props}
+					scrollEnabled={false}
           style={[styles.container, style, scrollStyle]}
           onLayout={this.onLayout}
           onScroll={this.onScroll}
