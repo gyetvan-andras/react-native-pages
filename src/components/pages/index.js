@@ -25,7 +25,7 @@ export default class Pages extends PureComponent {
   static propTypes = {
     style: ViewPropTypes.style,
     containerStyle: ViewPropTypes.style,
-
+		pagingEnabled: PropTypes.bool,
     indicatorColor: PropTypes.string,
     indicatorOpacity: PropTypes.number,
     indicatorPosition: PropTypes.oneOf([
@@ -248,7 +248,7 @@ export default class Pages extends PureComponent {
       <View style={[styles.container, containerStyle]}>
         <ScrollView
           {...props}
-					scrollEnabled={false}
+					scrollEnabled={this.props.pagingEnabled}
           style={[styles.container, style, scrollStyle]}
           onLayout={this.onLayout}
           onScroll={this.onScroll}
